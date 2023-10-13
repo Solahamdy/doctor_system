@@ -1,5 +1,6 @@
 import 'package:doctor_system/blocs/doctor_cubit/doctor_cubit.dart';
 import 'package:doctor_system/components/show_date.dart';
+import 'package:doctor_system/screens/doctor_account_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -37,7 +38,10 @@ class AppointmentsScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 30, color: Colors.white)),
             actions: [
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>const DoctorAccountScreen()),
+                            (route) => false);
+                  },
                   icon: const Icon(
                     Icons.menu,
                     size: 40,

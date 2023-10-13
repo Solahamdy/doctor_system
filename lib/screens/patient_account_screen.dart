@@ -3,6 +3,7 @@ import 'package:doctor_system/components/info_row.dart';
 import 'package:doctor_system/components/my_text.dart';
 import 'package:doctor_system/core/size_config.dart';
 import 'package:doctor_system/screens/appointments.dart';
+import 'package:doctor_system/screens/doctor_account_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../models/appointments_model.dart';
@@ -75,7 +76,7 @@ class PatientAccountScreen extends StatelessWidget {
           Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               CustomButton(size: 16, text: 'BACK',fun: (){
-                Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context)=>const AppointmentsScreen()) , (route) => false);
+                Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context)=>const DoctorAccountScreen()) , (route) => false);
               }),
               CustomButton(size: 15, text: 'PATIENT MISSING')
             ],)
