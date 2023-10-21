@@ -1,7 +1,8 @@
 class Appointments{
   String patientName;
   var time ;
+  bool completed = false;
 
-  Appointments(this.patientName, this.time);
+  Appointments({required this.patientName, this.time,required this.completed});
 
 }

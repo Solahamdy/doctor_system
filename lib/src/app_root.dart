@@ -1,5 +1,8 @@
+import 'package:doctor_system/blocs/authentication/authentication_cubit.dart';
+import 'package:doctor_system/blocs/registration/registration_cubit.dart';
 import 'package:doctor_system/screens/doctor_account_screen.dart';
 import 'package:doctor_system/screens/appointments.dart';
+import 'package:doctor_system/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,10 +15,12 @@ class AppRoot extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (BuildContext context)=> DoctorCubit())
+        BlocProvider(create: (BuildContext context)=> DoctorCubit()),
+        BlocProvider(create: (BuildContext context)=> AuthenticationCubit()),
+        BlocProvider(create: (BuildContext context)=> RegistrationCubit()),
       ],
-      child: const MaterialApp(
-         home: PatientAccountScreen(),
+      child:  MaterialApp(
+         home: LoginScreen(),
       ),
     ) ;
   }

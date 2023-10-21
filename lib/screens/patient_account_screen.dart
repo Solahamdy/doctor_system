@@ -12,7 +12,9 @@ class PatientAccountScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
+      backgroundColor: const Color(0xfffcfcfc),
       appBar: AppBar(
         backgroundColor: const Color(0xff18a7d1),
         leading: const Row(
@@ -63,9 +65,9 @@ class PatientAccountScreen extends StatelessWidget {
           const SizedBox(height: 5,),
           InfoRow(text: '07434697256', icon: Icons.phone_android,color:const Color(0xff18a7d1) ,),
           const SizedBox(height: 5,),
-          InfoRow(text: '48 Traian Street , Building 51 ,\nApartment 02 ,Brasov ', icon: Icons.location_on_outlined,color: Colors.grey),
+          InfoRow(text: '48 Traian Street , Building 51 ,Apartment 02 ,Brasov ', icon: Icons.location_on_outlined,color: Colors.grey),
           const SizedBox(height: 5,),
-          InfoRow(text: 'Medical tests are performed to\nverify the state of heath', icon: Icons.description,color: const Color(0xff18a7d1)),
+          InfoRow(text: 'Medical tests are performed to verify the state of heath', icon: Icons.description,color: const Color(0xff18a7d1)),
            const SizedBox(height: 60),
           Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

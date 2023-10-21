@@ -11,14 +11,17 @@ class DoctorCubit extends Cubit<DoctorState> {
   DoctorCubit() : super(DoctorInitial());
   static DoctorCubit get(context) => BlocProvider.of(context);
   List<Appointments> appointments = [
-    Appointments('Salma Hamdy', '10:50'),
-    Appointments('Ahmed Mohamed', '13:00'),
-    Appointments('Mahmoud Tamami', '15:20'),
-    Appointments('Nada gamal', '7:40'),
-    Appointments('Mohamed Karim', '8:10'),
-    Appointments('Yasmin Mater', '16:00'),
-    Appointments('Mariam Badr', '11:30'),
+    Appointments(patientName: 'Salma Hamdy',time: '10:50',completed: true),
+    Appointments(patientName:'Ahmed Mohamed',time: '13:00',completed: false),
+    Appointments(patientName:'Mahmoud Tamami',time: '15:20',completed: false),
+    Appointments(patientName:'Nada gamal', time: '7:40',completed: false),
+    Appointments(patientName:'Mohamed Karim',time: '8:10',completed: true),
+    Appointments(patientName:'Yasmin Mater', time: '16:00',completed: false),
+    Appointments(patientName:'Mariam Badr', time: '11:30',completed: true),
   ];
 
-
+  void changeCompleted(index) {
+    appointments[index].completed =! appointments[index].completed;
+    emit(ChangeCompletedState());
+}
 }

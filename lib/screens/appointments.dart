@@ -1,4 +1,5 @@
 import 'package:doctor_system/blocs/doctor_cubit/doctor_cubit.dart';
+import 'package:doctor_system/components/list_tile.dart';
 import 'package:doctor_system/components/show_date.dart';
 import 'package:doctor_system/screens/doctor_account_screen.dart';
 import 'package:flutter/material.dart';
@@ -68,9 +69,11 @@ class AppointmentsScreen extends StatelessWidget {
                         const Divider(color: Colors.grey),
                     itemCount: cubit.appointments.length,
                     itemBuilder: (context, index) {
-                      return AppointmentsColumn(
-                        patientName: cubit.appointments[index].patientName,
-                        time: cubit.appointments[index].time,
+                      return ListTileExample(
+                        title: cubit.appointments[index].patientName,
+                        subtitle: cubit.appointments[index].time,
+                        completed: cubit.appointments[index].completed,
+                        func:(){ cubit.changeCompleted(index);},
                       );
                     },
                   ),

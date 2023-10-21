@@ -2,6 +2,7 @@ import 'package:doctor_system/components/custom_button.dart';
 import 'package:doctor_system/components/info_row.dart';
 import 'package:doctor_system/components/my_text.dart';
 import 'package:doctor_system/screens/appointments.dart';
+import 'package:doctor_system/screens/patient_account_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../core/size_config.dart';
@@ -11,6 +12,7 @@ class DoctorAccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xfffcfcfc),
       appBar:AppBar(
       backgroundColor: const Color(0xff18a7d1),
       leading: const Row(
@@ -49,6 +51,12 @@ class DoctorAccountScreen extends StatelessWidget {
               Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>const AppointmentsScreen()),
                       (route) => false);
             }),
+           const SizedBox(height: 10,),
+           CustomButton(size: 18 , text: 'Patient Profile',fun:(){
+             Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>const PatientAccountScreen()),
+                     (route) => false);
+           } ,
+           )
          ],
        ),
      ),
